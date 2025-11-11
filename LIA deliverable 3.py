@@ -55,9 +55,9 @@ print("Skewness:", data["Age"].skew())
 print("Kurtosis:", data["Age"].kurt())
 print("Quartiles:", data["Age"].quantile([0.25, 0.50, 0.75]))
 
-#Once we have this principle down, we can use a loop to do the next numerical columns
+#Once we have this principle down, we can use a loop to do the next numerical columns:
 
-#Height, Weight, BMI, Phyical Activity Level
+#Height, Weight, BMI, Phyical Activity Level:
 for values in ["Height", "Weight", "BMI", "PhysicalActivityLevel"]:
     print(values)
     print("Mean:", data[values].mean())
@@ -68,5 +68,16 @@ for values in ["Height", "Weight", "BMI", "PhysicalActivityLevel"]:
     print("Skewness:", data[values].skew())
     print("Kurtosis:", data[values].kurt())
     print("Quartiles:", data[values].quantile([0.25, 0.50, 0.75]))
+
+#The categorical variables for this dataset are Gender and Obesity Category:
+for values in ["Gender", "ObesityCategory"]:
+    print("Frequency counts:", data[values].value_counts())
+    print("Proportions:", data[values].value_counts()/1000)
+    print("Mode:", data[values].mode())
+#This shows us that the majority of people surveyed for this dataset are within a Normal Weight range, and that most people were Male.
+    
+    
+
+
 
     
