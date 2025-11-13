@@ -157,4 +157,28 @@ sns.displot(data, x="Age", hue="ObesityCategory", stat="density" ,common_norm=Fa
 sns.displot(data, x="Age", kind="kde" , bw_adjust=2)
 #g) Empirical cumulative distributions
 sns.displot(data, x="Age", hue="ObesityCategory", kind="ecdf")
-  
+
+import matplotlib.pyplot as plt
+
+#6 Mutlivariate graphical EDA
+#6.1.Visualizing statistical relationships (5 plots):
+
+#a) Faceting feature (col parameter in the relplot() function
+sns.relplot(data, y='Height', x= 'BMI', col='Gender')
+plt.show()
+
+#b)  5 variables at once (x, y, hue, size, col)
+sns.relplot(data, x= 'Height', y= 'Weight', hue= 'BMI', size= 'Age' , col= 'Gender')
+plt.show()
+
+#c) plot using line instead of points (find a variable that makes sense emphasizing continuity and explain why)
+sns.relplot(data, x='BMI', y= 'Weight', kind= 'line')
+plt.show()
+
+#d) illustrating standard deviation
+sns.relplot(data, x='Age', y= 'Weight', kind= 'line', errorbar='sd')
+plt.show()
+
+#e) plot including linear regression
+sns.lmplot(data, x='Age', y= 'BMI')
+plt.show()
