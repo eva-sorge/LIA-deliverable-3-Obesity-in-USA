@@ -182,3 +182,61 @@ plt.show()
 #e) plot including linear regression
 sns.lmplot(data, x='Age', y= 'BMI')
 plt.show()
+
+#6.2.Visualizing categorical data (10 plots):
+
+#a) categorical scatter plot with jitter enabled
+sns.catplot(data, y= 'Weight', x= 'PhysicalActivityLevel', jitter= True)
+plt.show()
+
+#b)  categorical scatter plot with jitter disabled (explain your choice of variable for this one)
+sns.catplot(data, y= 'BMI', x= 'PhysicalActivityLevel', jitter= False)
+plt.show()
+
+#This choice of variable shows the min and max level of BMI level per physical activity level
+#c) “beeswarm” plot representing 3 variables
+sns.catplot(data, y= 'BMI', x= 'PhysicalActivityLevel', hue= 'Gender', kind= 'swarm')
+plt.show()
+
+#d) boxplot representing 3 variables
+sns.catplot(data, y= 'BMI', x= 'PhysicalActivityLevel', hue= 'Gender', kind= "box")
+plt.show()
+
+#e)  box plot showing the shape of the distribution (boxenplot())
+sns.boxenplot(data, x= 'PhysicalActivityLevel', y= "BMI")
+plt.show()
+
+#f) split violin plot representing 3 variables with bandwidth adjusted for better visualization
+sns.violinplot(data, x= 'ObesityCategory', y= 'Age', hue= "Gender", bw_adjust= 0.6, split= True)
+plt.show()
+
+#g) violin plot with scatter points inside the violin shapes
+sns.catplot(data, y= 'Age', x= 'ObesityCategory', kind= 'violin', inner= None)
+sns.swarmplot(data, y= 'Age', x= 'ObesityCategory', color= 'k', size= 2.5)
+plt.show()
+
+#h) bar plot representing 3 variables showing 97% confidence intervals
+sns.catplot(data, x= 'ObesityCategory', y= 'Age', hue= 'Gender', kind= 'bar', errorbar= ('pi', 97))
+plt.show()
+
+#i) point plot representing 3 variables showing 90% confidence intervals and lines in dashed style
+sns.pointplot(data, x= 'Weight', y= 'ObesityCategory', hue= 'Gender', linestyle= '--', errorbar= ('pi',90))
+plt.show()
+
+#j) bar plot showing the number of observations in each category
+sns.countplot(data)
+plt.show()
+
+#6.3. Visualizing bivariate distributions (3 plots):
+
+#a) 1 “heatmap” plot representing 2 variables with color intensity bar and adjusted bin width.
+sns.displot(data, x= 'ObesityCategory', y= 'Height', binwidth= (2, 1.5) , cbar= True)
+plt.show()
+
+#b) 1 distribution plot with 2 variables making use of bivariate density contours with amount of curves and its lowest level adjusted (use a kernel density estimation displot()).
+sns.displot(data, x= 'Height', y= 'Age', kind= 'kde', bw_adjust= .8)
+plt.show()
+
+#c) 1 “heatmap” plot representing 3 variables, again of kind kde.
+sns.displot(data, x= 'PhysicalActivityLevel', y= 'BMI', col= 'Gender', kind= 'kde')
+plt.show()
