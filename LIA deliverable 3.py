@@ -140,7 +140,7 @@ sns.displot(data, x="PhysicalActivityLevel", hue="ObesityCategory", stat="densit
 #f) Kernel density estimation (choosing the smoothing bandwidth)
 sns.displot(data, x="PhysicalActivityLevel", kind="kde" , bw_adjust=2)
 #g) Empirical cumulative distributions
-sns.displot(data, x="PhysicalActivityLevel", hue="ObesityCategory", kind="ecdf")
+sns.displot(data, x="PhysicalActivityLevel", kind="ecdf")
 
 
 #a) Custom and appropriate number of bins
@@ -157,6 +157,25 @@ sns.displot(data, x="Age", hue="ObesityCategory", stat="density" ,common_norm=Fa
 sns.displot(data, x="Age", kind="kde" , bw_adjust=2)
 #g) Empirical cumulative distributions
 sns.displot(data, x="Age", hue="ObesityCategory", kind="ecdf")
+
+
+#5 Multivariate non-graphical EDA
+
+import pandas as pd 
+
+# a (different variables ) and b (normalize)
+
+print(pd.crosstab(data["ObesityCategory"], data["Gender"]))
+print(pd.crosstab(data["ObesityCategory"], data["Gender"], normalize=True))
+print(pd.crosstab(data["Gender"], data["PhysicalActivityLevel"]))
+print(pd.crosstab(data["Gender"], data["PhysicalActivityLevel"], normalize=True))
+print(pd.crosstab(data["ObesityCategory"], data["PhysicalActivityLevel"]))
+print(pd.crosstab(data["ObesityCategory"], data["PhysicalActivityLevel"], normalize=True))
+
+#c (one three-way frequency table)
+print(pd.crosstab([data["Gender"], data["ObesityCategory"]], data["PhysicalActivityLevel"]))
+print(pd.crosstab([data["Gender"], data["ObesityCategory"]], data["PhysicalActivityLevel"], normalize=True))
+
 
 import matplotlib.pyplot as plt
 
