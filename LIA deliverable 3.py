@@ -183,7 +183,7 @@ plt.show()
 sns.lmplot(data, x='Age', y= 'BMI')
 plt.show()
 
-#6.2.Visualizing categorical data (10 plots):
+#6.2. Visualizing categorical data (10 plots):
 
 #a) categorical scatter plot with jitter enabled
 sns.catplot(data, y= 'Weight', x= 'PhysicalActivityLevel', jitter= True)
