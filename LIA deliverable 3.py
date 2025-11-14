@@ -158,20 +158,6 @@ sns.displot(data, x="Age", kind="kde" , bw_adjust=2)
 #g) Empirical cumulative distributions
 sns.displot(data, x="Age", hue="ObesityCategory", kind="ecdf")
 
-#a) What is the distribution of the variable? (is the data normally distributed, skewed,bimodal, etc?)
-
-
-#b) Are there any outliers? (are there extreme values that fall outside the typical range?)
-
-
-#c) What is the spread and central tendency? (where is the median? How spread out is the data?)
-
-
-#d) Is the data symmetric or skewed? (is the data skewed left or right?)
-
-
-#e) How frequent are certain ranges of values? (which value ranges are most common?)
- 
 
 #5 Multivariate non-graphical EDA
 
@@ -189,12 +175,6 @@ print(pd.crosstab(data["ObesityCategory"], data["PhysicalActivityLevel"], normal
 #c
 print(pd.crosstab([data["Gender"], data["ObesityCategory"]], data["PhysicalActivityLevel"]))
 print(pd.crosstab([data["Gender"], data["ObesityCategory"]], data["PhysicalActivityLevel"], normalize=True))
-
-
-
-
-
-
 
 
 
