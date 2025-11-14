@@ -246,7 +246,7 @@ sns.pointplot(data, x= 'Weight', y= 'ObesityCategory', hue= 'Gender', linestyle=
 plt.show()
 
 #j) bar plot showing the number of observations in each category
-sns.countplot(data)
+sns.countplot(data, x= 'ObesityCategory')
 plt.show()
 
 #6.3. Visualizing bivariate distributions (3 plots):
