@@ -79,11 +79,15 @@ for values in ["Gender", "ObesityCategory"]:
 #4 Univariate graphical EDA
 
 import seaborn as sns
+import matplotlib.pyplot as plt
 
-#a) Custom and appropriate number of bins
+#BMI
+
+#a) Custom and appropriate number of bins 
 sns.displot(data, x="BMI" , bins=20 )
 #b) Conditioning on other variables
 sns.displot(data, x="BMI", hue="Gender", bins=20)
+plt.title("BMI VS GENDER")
 #c) Stacked histogram
 sns.displot(data, x="BMI", hue="ObesityCategory" , bins=20 , multiple="stack")
 #d) Dodge bars
@@ -95,6 +99,7 @@ sns.displot(data, x="BMI", kind="kde" , bw_adjust=2)
 #g) Empirical cumulative distributions
 sns.displot(data, x="BMI", hue="ObesityCategory", kind="ecdf")
 
+#WEIGHT
 
 #a) Custom and appropriate number of bins
 sns.displot(data, x="Weight" , bins=20 )
@@ -111,6 +116,8 @@ sns.displot(data, x="Weight", kind="kde" , bw_adjust=2)
 #g) Empirical cumulative distributions
 sns.displot(data, x="Weight", hue="ObesityCategory", kind="ecdf")
 
+#HEIGHT
+
 #a) Custom and appropriate number of bins
 sns.displot(data, x="Height" , bins=20 )
 #b) Conditioning on other variables
@@ -126,6 +133,9 @@ sns.displot(data, x="Height", kind="kde" , bw_adjust=2)
 #g) Empirical cumulative distributions
 sns.displot(data, x="Height", hue="ObesityCategory", kind="ecdf")
 
+#non-continuous variables (AGE AND PHYSICAL ACTIVITY )
+
+#PHYSICAL ACTIVITY
 
 #a) Custom and appropriate number of bins
 sns.displot(data, x="PhysicalActivityLevel" , bins=10 )
@@ -135,13 +145,10 @@ sns.displot(data, x="PhysicalActivityLevel", hue="Gender", bins=10)
 sns.displot(data, x="PhysicalActivityLevel", hue="ObesityCategory" , bins=10 , multiple="stack")
 #d) Dodge bars
 sns.displot(data, x="PhysicalActivityLevel", hue="ObesityCategory",bins=10, multiple="dodge")
-#e) Normalized histogram statistics
-sns.displot(data, x="PhysicalActivityLevel", hue="ObesityCategory", stat="density" ,common_norm=False)
-#f) Kernel density estimation (choosing the smoothing bandwidth)
-sns.displot(data, x="PhysicalActivityLevel", kind="kde" , bw_adjust=2)
-#g) Empirical cumulative distributions
-sns.displot(data, x="PhysicalActivityLevel", kind="ecdf")
 
+#this variable is not continuous enough to have normalized histogram , ecdf and kde
+
+# AGE
 
 #a) Custom and appropriate number of bins
 sns.displot(data, x="Age" , bins=10 )
@@ -151,12 +158,8 @@ sns.displot(data, x="Age", hue="Gender", bins=10)
 sns.displot(data, x="Age", hue="ObesityCategory" , bins=10 , multiple="stack")
 #d) Dodge bars
 sns.displot(data, x="Age", hue="ObesityCategory",bins=10, multiple="dodge")
-#e) Normalized histogram statistics
-sns.displot(data, x="Age", hue="ObesityCategory", stat="density" ,common_norm=False)
-#f) Kernel density estimation (choosing the smoothing bandwidth)
-sns.displot(data, x="Age", kind="kde" , bw_adjust=2)
-#g) Empirical cumulative distributions
-sns.displot(data, x="Age", hue="ObesityCategory", kind="ecdf")
+
+#this variable is not continuous enough to have normalized histogram , ecdf and kde
 
 
 #5 Multivariate non-graphical EDA
