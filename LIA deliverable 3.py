@@ -6,9 +6,6 @@ Created on Mon Nov 10 21:14:13 2025
 @author: evasorge
 """
 
-#1. Introduction:
-    
-#The dataset we are using compares age, gender, height, weight, BMI, activity level and obesity level. The question to which we would like to visualize the answer is wether or not higher physical inactivity levels correlates to increased obesity across the US. To this question, we would also like to answer if there is a correlation between gender and higher BMI. 
 
 #2. Preliminary steps:
     
